@@ -5,8 +5,91 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>메인페이지</title>
+    <link rel="stylesheet" href="weatherStyle.css">
 </head>
 <body>
+    <header> <hr> 
+    <button><img src="handle.png"><br>날씨 저장하기</button>
+    <button><img src="handle.png"><br>로그아웃</button>
+    </header>
     
+    <main>
+        <div class="userInfo">
+            <div class="user">
+                <div class="profile">
+                    <div id="name">username</div>
+                    <br>
+                    <div id="clock">현재시각</div>
+                    <br>
+                    <div id="location">현재위치</div>
+                    <br>    
+                    <button> 마이페이지 </button>
+                </div>
+            </div>
+        </div>
+        <div class="forecast">
+            <div class="info">
+                <h2>오늘의 날씨 정보</h2>
+                <div class="infoContainer">
+                    <div id="low">최저기온</div>
+                    <div id="high">최고기온</div>
+                    <div id="humidity">습도</div>
+                    <div id="rain">강수</div>
+                </div>
+            </div>
+            
+            <div class="threeDays">
+                <h2>3일 날씨</h2>
+                <div id="plusOne">
+                    <h3>토</h3>
+                    <div class="temp">최저기온<br>최고기온</div>
+                    <div class="wimg">날씨 이미지</div>
+                </div>
+                <div id="plusTwo">
+                    <h3>일</h3>
+                    <div class="temp">최저기온<br>최고기온</div>
+                    <div class="wimg">날씨 이미지</div>
+                </div>
+                <div id="plusThree">
+                    <h3>월</h3>
+                    <div class="temp">최저기온<br>최고기온</div>
+                    <div class="wimg">날씨 이미지</div>
+                </div>
+            </div>
+        </div>
+        <div class="explain">
+            <div id="expText">
+                좋아하는 날씨를 저장해 보세요<br>
+                현재 날씨를 저장할 수 있어요.<br>
+                손잡이를 당기면 저장할 수 있어요.
+            </div>
+        </div>
+        <div class="todayWeather">
+            <div id="windowBorder"></div>
+            <div id="window"></div>
+            <div class="temperature">
+                    <div class="past">
+                        <p id="pastHour">1시간 전</p>
+                        <!--<hr style="border: solid 1px #F3ECAE; width: 60px;">-->
+                        <p id="pastTemp">
+                            비  22도
+                        </p>
+                    </div>
+                    <div class="future">
+                        <p id="futureHour">1시간 후</p>
+                        <p id="futureTemp">흐림 24도</p>
+                    </div>
+            </div>
+            <div class="now">
+                <span id="todayExp">비</span>
+                <span id="todayTemp">24도</span>
+            </div>
+            <img id="wicon" src="sun.png" alt="wicon">
+        </div>
+    </main>
+    
+    <footer></footer>
+    
+    <script src="weatherScript.js"></script>
 </body>
 </html>
