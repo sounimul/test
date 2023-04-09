@@ -110,7 +110,9 @@ main .forecast {
 .infoContainer div {
     width: 80px;
     height: 80px;
-    background-color: #4C623B;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
 .info, .threeDays {
@@ -263,7 +265,6 @@ main .forecast {
 #expText {
     margin-top: 170px;
     height: 150px;
-    text-align: center;
 }
 
 footer {
