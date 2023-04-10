@@ -28,34 +28,60 @@
             </div>
         </div>
         <div class="forecast">
-            <div class="info">
-                <h2>오늘의 날씨 정보</h2>
-                <div class="infoContainer">
-                    <div id="low">최저기온</div>
-                    <div id="high">최고기온</div>
-                    <div id="humidity">습도</div>
-                    <div id="rain">강수</div>
-                </div>
-            </div>
+                <table class="info">
+                    <th colspan="2"><h2>오늘의 날씨 정보</h2></th>
+                    <tr>
+                        <td class="tdh">최저기온</td>
+                        <td class="tdh">최고기온</td>
+                    </tr>
+                    <tr>
+                        <td id="infoLow">3℃</td>
+                        <td id="infoHigh">13℃</td>
+                    </tr>
+                    <tr>
+                        <td class="tdh">습도</td>
+                        <td class="tdh">강수</td>
+                    </tr>
+                    <tr>
+                        <td id="infoHumidity">67%</td>
+                        <td id="infoRain">50%
+                        </td>
+                    </tr>
+                </table>
             
-            <div class="threeDays">
-                <h2>3일 날씨</h2>
-                <div id="plusOne">
-                    <h3>토</h3>
-                    <div class="temp">최저기온<br>최고기온</div>
-                    <div class="wimg">날씨 이미지</div>
-                </div>
-                <div id="plusTwo">
-                    <h3>일</h3>
-                    <div class="temp">최저기온<br>최고기온</div>
-                    <div class="wimg">날씨 이미지</div>
-                </div>
-                <div id="plusThree">
-                    <h3>월</h3>
-                    <div class="temp">최저기온<br>최고기온</div>
-                    <div class="wimg">날씨 이미지</div>
-                </div>
-            </div>
+                <table class="threeDays">
+                    <th colspan="4"><h2>3일 날씨</h2></th>
+                    <tr>
+                        <td class="futureDay" rowspan="2">월</td>
+                        <td class="tdh">최고</td>
+                        <td class="high">13℃</td>
+                        <td rowspan="2">이미지</td>
+                    </tr>
+                    <tr>
+                        <td class="tdh">최저</td>
+                        <td class="high">3℃</td>
+                    </tr>
+                    <tr>
+                        <td class="futureDay" rowspan="2">화</td>
+                        <td class="tdh">최고</td>
+                        <td class="high">13℃</td>
+                        <td rowspan="2">이미지</td>
+                    </tr>
+                    <tr>
+                        <td class="tdh">최저</td>
+                        <td class="low">3℃</td>
+                    </tr>
+                    <tr>
+                        <td class="futureDay" rowspan="2">수</td>
+                        <td class="tdh">최고</td>
+                        <td class="high">13℃</td>
+                        <td rowspan="2">이미지</td>
+                    </tr>
+                    <tr>
+                        <td class="tdh">최저</td>
+                        <td class="low">3℃</td>
+                    </tr>
+                </table>
         </div>
         <div class="explain">
             <div id="expText">
@@ -72,17 +98,17 @@
                         <p id="pastHour">1시간 전</p>
                         <!--<hr style="border: solid 1px #F3ECAE; width: 60px;">-->
                         <p id="pastTemp">
-                            비  22도
+                            비  22℃
                         </p>
                     </div>
                     <div class="future">
                         <p id="futureHour">1시간 후</p>
-                        <p id="futureTemp">흐림 24도</p>
+                        <p id="futureTemp">흐림 ℃</p>
                     </div>
             </div>
             <div class="now">
                 <span id="todayExp">비</span>
-                <span id="todayTemp">24도</span>
+                <span id="todayTemp">24℃</span>
             </div>
             <img id="wicon" src="sun.png" alt="wicon">
         </div>
