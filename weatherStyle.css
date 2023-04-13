@@ -73,6 +73,12 @@ main {
     background-position: 30px 30px;
 }
 
+#refresh {
+    background: transparent;
+    border: none;
+    cursor: pointer;
+}
+
 main .forecast {
     display: flex;
     flex-direction: column;
