@@ -1,6 +1,8 @@
 let weather = prompt('날씨를 입력하세요','sun')
 const wicon = document.getElementById("wicon");
 const clock = document.getElementById('clock');
+const pastHour = document.getElementById('pastHour');
+const futureHour = document.getElementById('futureHour');
 const loc = document.getElementById('location');
 
 function Icon(){
@@ -19,7 +21,14 @@ function getClock(){
     const min = now.getMinutes();
 
     clock.innerText = `${month+1}월 ${date}일 ${day_arr[day]}요일 \n ${hour}시 ${min}분`;
+    
+    const past = hour-1;
+    if(past<0) pastHour.innerText = '11:00';
+    else pastHour.innerText = `${past}:00`;
 
+    const future = hour+1;
+    if(future==24) futureHour.innerText = `00:00`
+    else futureHour.innerText = `${future}:00`
 }
 
 function getLoc(){
