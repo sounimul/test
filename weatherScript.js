@@ -4,6 +4,9 @@ const clock = document.getElementById('clock');
 const pastHour = document.getElementById('pastHour');
 const futureHour = document.getElementById('futureHour');
 const loc = document.getElementById('location');
+const futureDay1 = document.getElementsByClassName('futureDay')[0];
+const futureDay2 = document.getElementsByClassName('futureDay')[1];
+const futureDay3 = document.getElementsByClassName('futureDay')[2];
 
 function Icon(){
     wicon.setAttribute('src',`${weather}.png`);
@@ -29,6 +32,31 @@ function getClock(){
     const future = hour+1;
     if(future==24) futureHour.innerText = `00:00`
     else futureHour.innerText = `${future}:00`
+
+    /* 3일 날씨 */
+    if(day===4) {
+        futureDay1.innerText = day_arr[5];
+        futureDay2.innerText = day_arr[6];
+        futureDay3.innerText = day_arr[0];
+    }
+    else if(day===5) {
+        futureDay1.innerText = day_arr[6];
+        futureDay2.innerText = day_arr[0];
+        futureDay3.innerText = day_arr[1];
+    }
+    else if(day===6) {
+        futureDay1.innerText = day_arr[0];
+        futureDay2.innerText = day_arr[1];
+        futureDay3.innerText = day_arr[2];
+    }
+    else {
+        futureDay1.innerText = day_arr[day+1];
+        futureDay2.innerText = day_arr[day+2];
+        futureDay3.innerText = day_arr[day+3];
+    }
+
+
+    
 }
 
 function getLoc(){
