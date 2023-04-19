@@ -1,4 +1,4 @@
-let weather = prompt('날씨를 입력하세요','sun')
+//let weather = prompt('날씨를 입력하세요','sun')
 const wicon = document.getElementById("wicon");
 const clock = document.getElementById('clock');
 const pastHour = document.getElementById('pastHour');
@@ -11,7 +11,7 @@ const futureDay3 = document.getElementsByClassName('futureDay')[2];
 const weather_arr = ['맑음','구름조금','구름많음','흐림','빗방울','비','눈'];
 
 function Icon(){
-    wicon.setAttribute('src',`${weather}.png`);
+    //wicon.setAttribute('src',`${weather}.png`);
     console.log(wicon);
 }
 
