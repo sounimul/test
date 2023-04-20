@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My page</title>
+    <link rel="stylesheet" href="myPageStyle.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
+</head>
+<body>
+    <div class="wrapper">
+        <section class="profile">
+            <div class="userInfo">
+            </div>
+            <img src="" alt="favoriteWeatherCharacter">
+        </section>
+        <section class="favoriteWeather">
+            <h3>저장한 날씨</h3>
+            <div class="board">
+                <div class="searchBar">
+                    <span class="sCondition" id="sTemp">기온</span>
+                    <span class="sCondition" id="sHumidity">습도</span>
+                    <span class="sCondition" id="sPrecipitation">강수량</span>
+                    <button>
+                        <span class="material-symbols-outlined" id="sIcon">search</span>
+                    </button>
+                </div>
+                <article id="fw1">
+                    <header>
+                        <span id="fwDate">4월 20일 대구 달서구의 날씨</span>
+                        <span id="fwIcon"></span>
+                    </header>
+                    <div class="fwDetails">
+                        <p id="fwTemp">
+                            <span>25°C</span>
+                            <span>더워요</span>
+                        </p>
+                        <p id="fwHumidity">
+                            <span>60%</span>
+                            <span>습해요</span>
+                        </p>
+                        <p id="fwPrecipitation">
+                            <span>0</span>
+                            <span>비 안옴</span>
+                        </p>
+                    </div>
+                </article>
+            </div>
+        </section>
+    </div>
+</body>
+</html>

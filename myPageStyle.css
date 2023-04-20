@@ -1,0 +1,78 @@
+body {
+    width: 100vw;
+    height: 100vh;
+    margin: auto;
+    overflow: hidden;
+}
+
+.wrapper {
+    border: 1px solid black;
+    padding: 20px;
+    height: 60%;
+    width: 80%;
+
+    margin: 10%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.profile {
+    border: 1px solid black;
+    
+    margin: 10px;
+    padding: 10px;
+    width: 30%;
+    height: 90%;
+}
+
+.favoriteWeather {
+    border: 1px solid black;
+    
+    margin: 10px;
+    padding: 10px;
+    width: 60%;
+    height: 90%;
+}
+
+.board {
+
+    height: 85%;
+}
+
+.searchBar {
+    border: 1px solid black;
+
+    padding: 10px;
+    height: 40px;
+    text-align: center;
+}
+
+.sCondition {
+
+    display: inline-block;
+    width: 25%;
+    height: 30px;
+}
+
+button {
+    border: none;
+    background-color: transparent;
+}
+
+button:hover {
+    cursor: pointer;
+}
+
+#sIcon {
+    width: 5%;
+    height: 30px;
+}
+
+
+#fw1 {
+    border: 1px solid black;
+    width: 250px;
+    height: 150px;
+    margin-top: 10px;
+}
