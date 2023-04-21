@@ -1,4 +1,4 @@
-//let weather = prompt('날씨를 입력하세요','sun')
+let weather = prompt('날씨를 입력하세요','sun')
 const wicon = document.getElementById("wicon");
 const clock = document.getElementById('clock');
 const pastHour = document.getElementById('pastHour');
@@ -11,7 +11,10 @@ const futureDay3 = document.getElementsByClassName('futureDay')[2];
 const weather_arr = ['맑음','구름조금','구름많음','흐림','빗방울','비','눈'];
 
 function Icon(){
-    //wicon.setAttribute('src',`${weather}.png`);
+    wicon.setAttribute('src',`${weather}.png`);
+    // if(weather=='cloudAndSun') {
+    //     wicon.setAttribute('style','width:900px');
+    // }
     console.log(wicon);
 }
 
@@ -25,7 +28,9 @@ function getClock(){
     const hour = now.getHours(); //24시간제
     const min = now.getMinutes();
 
-    clock.innerText = `${month+1}월 ${date}일 ${day_arr[day]}요일 \n ${hour}시 ${min}분`;
+    console.log(hour, min);
+
+    clock.innerText = `${month+1}월 ${date}일 ${day_arr[day]}요일 ${hour}시 ${min}분`;
     
     const past = hour-1;
     if(past<0) pastHour.innerText = '11:00';
@@ -68,7 +73,8 @@ function getLoc(){
         const latitude = position.coords.latitude;
         const longitude = position.coords.longitude;
 
-        loc.innerText = `위도 ${latitude} \n 경도 ${longitude}`;
+        loc.innerText = `${latitude} ${longitude}`;
+        console.log('위치');
     }
 }
 

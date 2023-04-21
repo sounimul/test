@@ -1,0 +1,127 @@
+/* 전체 배치 조절 */
+body {
+    margin: 0;
+    overflow: hidden;
+}
+
+/* body 내부 */
+header {
+    height: 80px;
+    position: sticky;
+    top: 0;
+    background-color: #ACA9A9;
+}
+
+main {
+    padding-right: 90px;
+    height: 750px;
+    display: grid;
+    grid-template-columns: 350px auto 350px;
+}
+
+footer {
+    height: 200px;
+    background-color: gray;
+}
+
+/* main 내부 */
+.userInfo {
+    padding-top: 83px;
+}
+
+.userInfo .user {
+    width: 300px;
+    height: 550px;
+    border-top-right-radius: 30px;
+    border-bottom-right-radius: 30px;
+    border-top: 10px solid #D9D9D9;
+    border-right: 10px solid #D9D9D9;
+    border-bottom: 10px solid #D9D9D9;
+    background-color: #F0F0F0;
+}
+
+.todayWeather {
+    padding-top: 30px;
+    padding-left: 50px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 600px;
+}
+
+.nowInfo {
+    height: 130px;
+    display: flex;
+    flex-direction: column;
+    justify-content: start;
+    align-items: center;
+    padding-top: 20px;
+}
+
+#windowBorder {
+    background-color: #D9D9D9;
+    border-radius: 70px;
+    width: 800px;
+    height: 500px;
+}
+
+#window {
+    background: #C3C3C3;
+    border: 10px solid #F0F0F0;
+    border-radius: 60px;
+    width: 760px;
+    height: 460px;
+
+    position: relative;
+    top: 10px;
+    left: 10px;
+
+    background-image: url("/tile.png");
+    background-repeat: repeat;
+    background-position: 30px 30px;
+}
+
+#clock {
+    font-size: 28px;
+    color: #4C623B;
+    font-weight: 700;
+}
+
+#refresh {
+    background-color: transparent;
+    border: none;
+}
+
+.forecast {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+    border-left: 3px solid #D9D9D9;
+    border-right: 3px solid #D9D9D9;
+    padding-top: 30px;
+    margin-left: 30px;
+    margin-right: 20px;
+}
+
+.todayWeatherIcon {
+    z-index: 1;
+    position: absolute;
+    top: 400px;
+    display: flex;
+    justify-content: center;
+}
+
+/* 반응형 */
+
+@media screen and (max-width:1620px){
+    main {
+        grid-template-columns: auto 350px;
+    }
+
+    .userInfo {
+        display: none;
+    }
+}
