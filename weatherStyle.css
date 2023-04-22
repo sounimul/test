@@ -1,57 +1,178 @@
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding-right: 12px;
+}
+
+/* 메뉴(헤더 버전) */
+header .userName {
+    color: #4C623B;
+    padding-left: 12px;
+    display: none;
+}
+
+header .userName p {
+    margin: 0;
+    color: #4C623B;
+    font-weight: 600;
+}
+
+#huserNickname {
+    font-weight: 900;
+    font-size: 24px;
+}
+
+.hbtnWrapper {
+    width: 200px;
+    padding: 12px;
+    /* display: flex; */
+    justify-content: space-around;
+    align-items: center;
+    display: none
+}
+.hbtnWrapper button {
+    display: flex;
+    height: 44px;
+    width: 44px;
+    justify-content: space-between;
+    color: #F3ECAE;
+    background-color: #4C623B;
+    border: 0;
+    border-radius: 60px;
+    padding: 10px;
+    cursor: pointer;
+}
+
+.hbtnWrapper button:hover {
+    background-color: #F3ECAE;
+    color: #4C623B;
+}
+
+.hbtnWrapper button span {
+    margin-right: 10px;
+}
+
+/* 메뉴(창문 버전) */
+.user .userName p {
+    margin-bottom: 8px;
+    color: #4C623B;
+    font-weight: 600;
+}
+
+.user .userName span {
+    color: #4C623B;
+    font-weight: 600;
+}
+
+#userNickname { /* user name */
+    font-weight: 900;
+    font-size: 24px;
+}
+
+.user .btnWrapper {
+    margin: auto;
+    height: 180px;
+    padding: 10px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+}
+.user button {
+    width: 140px;
+    display: flex;
+    justify-content: space-between;
+    color: #F3ECAE;
+    background-color: #4C623B;
+    border: 0;
+    border-radius: 30px;
+    padding: 8px 10px 8px 10px;
+}
+
+.user button span {
+    margin-right: 10px;
+}
+
+
+/* table 데이터 */
+
+/* table 전체 */
+/* div(.forecast) -> table(.info, .threeDays) */
+table {
+    width: 90%;
+    margin-bottom: 20px;
+}
+
+.info h2, .threeDays h2 {
+    color: #F3ECAE;
+    background-color: #4C623B;
+    border-radius: 30px;
+    padding: 5px;
+    width: 180px;
+    font-weight: 700;
+    text-align: center;
+    margin: auto;
+    margin-bottom: 20px;
+}
+
+/* forecast */
+/* table(.info) -> th -> tr -> td
+   td: .tdh, #infoLow, #infoHigh, #infoHumidity, #infoRain */
 .forecast .info {
     display: flex;
     flex-direction: column;
     align-items: center;
+    padding: 10px;
 }
 
-.info h2 {
-    text-align: center;
-    margin: 0;
-    margin-top: 10px;
-    margin-bottom: 30px;
-}
-
-table {
-    margin-bottom: 20px;
-    width: 80%;
-}
-
-.info {
-    text-align: center;
+tr {
+    width: 100%;
+    font-size: 18px;
+    color: #4C623B;
 }
 
 .tdh {
-    font-weight: 600;
-    text-align: center;
-}
-
-.futureDay {
-    font-weight: 600;
-    font-size: 1.2rem;
+    font-weight: 700;
+    font-size: 18px;
     color: #4C623B;
+    text-align: center;
+    /* padding: 10px 20px 0 20px; */
 }
 
 #infoLow, #infoHigh, #infoHumidity, #infoRain {
     padding-bottom: 15px;
     padding-top: 10px;
+    text-align: center;
 }
 
-.low, .high {
+/* threeDays */
+/* table(.threeDays) -> th -> tr -> td
+   td: .futueDay .threeDaysLow .threeDaysHigh .threeDaysIcon */
+.threeDays {
+    padding: 10px;
+}
+
+.threeDays td {
+    padding: 10px;
+}
+
+.futureDay, .threeDaysIcon {
+    text-align: center;
+}
+
+.threeDaysLow {
     text-align: right;
+    color: blue;
 }
 
-#plusOne, #plusTwo, #plusThree {
-    width: 80%;
-    height: 25%;
-
-    display: flex;
-    flex-direction: row;
+.threeDaysHigh {
+    text-align: right;
+    color: red;
 }
 
-.threeDays h3 {
-    margin-right: 10px;
-}
-
+/*-------------------------*/
+/* 현재 날씨 */
 .temperature {
     width: 760px;
     height: 100px;
@@ -81,51 +202,68 @@ table {
 
 .now {
     background-color: #F3ECAE;
-    width: 400px;
-    height: 160px;
     border-radius: 100px;
-    border: 10px solid #4C623B;
-    text-align: center;
-    margin: auto;
+    border: 10px solid #4C623B;;
 }
 
-#todayExp{
+#currentExp{
     display: inline-block;
-    width: 200px;
+    width: 180px;
     line-height: 140px;
     text-align: left;
-    font-size: 2rem;
+    font-size: 36px;
+    padding-left: 20px;
+    color: #4C623B;
+    font-weight: 900;
 }
 
-#todayTemp{
+#currentTemp{
     display: inline-block;
     width: 100px;
     text-align: center;
     line-height: 140px;
-    font-size: 3rem;
+    font-size: 40px;
     font-weight: 900;
+    padding-right: 20px;
+    color: #4C623B;
 }
 
 .past, .future {
     display: flex;
     flex-direction: column;
-    text-align: center;
+    justify-content: center;
+    align-items: center;
     color: #F3ECAE;
 }
 
-#pastHour, #futureHour{
-    display: block;
-    font-size: 1rem;
-    margin: 0;
+.past {
+    padding-left: 10px;
+}
+
+.future {
+    padding-right: 10px;
+}
+
+#pastHour, #futureHour {
+    text-align: center;
+    margin-bottom: 0;
     margin-top: 20px;
 }
 
-#pastTemp, #futureTemp{
-    display: block;
-    font-size: 1.5rem;
+.pastInfo, .futureInfo {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 0;
+}
+
+.pastInfo span, .futureInfo span{
+    padding: 0 10px 0 10px;
+}
+
+#pastTemp, #futureTemp {
+    font-size: 28px;
     font-weight: 600;
-    margin: 0;
-    margin-top: 5px;
 }
 
 .explain {
