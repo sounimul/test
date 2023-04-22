@@ -1,60 +1,18 @@
 body {
-    width: 100vw;
-    height: 100vh;
-    margin: auto;
+    margin: 0;
     overflow: hidden;
-}
-
-.wrapper {
-    border: 1px solid black;
-    padding: 20px;
-    height: 60%;
-    width: 80%;
-
-    margin: 10%;
     display: flex;
-    justify-content: center;
+    flex-direction: column;
     align-items: center;
+    justify-content: center;
+    padding: 50px;
 }
 
-.profile {
-    border: 1px solid black;
-    
-    margin: 10px;
-    padding: 10px;
-    width: 30%;
-    height: 90%;
+a {
+    text-decoration: none;
 }
 
-.favoriteWeather {
-    border: 1px solid black;
-    
-    margin: 10px;
-    padding: 10px;
-    width: 60%;
-    height: 90%;
-}
-
-.board {
-
-    height: 85%;
-}
-
-.searchBar {
-    border: 1px solid black;
-
-    padding: 10px;
-    height: 40px;
-    text-align: center;
-}
-
-.sCondition {
-
-    display: inline-block;
-    width: 25%;
-    height: 30px;
-}
-
+/* basic style */
 button {
     border: none;
     background-color: transparent;
@@ -64,15 +22,257 @@ button:hover {
     cursor: pointer;
 }
 
-#sIcon {
-    width: 5%;
-    height: 30px;
+/* layout */
+header {
+    /* border: 1px solid orange; */
+    width: 80%;
+    height: 50px;
+    display: flex;
+    justify-content: left;
+}
+
+.wrapper {
+    /* border: 1px solid red; */
+    height: 700px;
+
+    width: 80%;
+    min-width: 700px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.profile {
+    /* border: 1px solid blue; */
+    width: 340px;
+    display: flex;
+    justify-content: center;
+    height: 630px;
+}
+
+/* 좋아하는 날씨 캐릭터 */
+#windowBorder {
+    background-color: #D9D9D9;
+    border-radius: 70px;
+    width: 300px;
+    height: 380px;
+}
+
+#window {
+    border: 10px solid #F0F0F0;
+    border-radius: 60px;
+    width: 260px;
+    height: 340px;
+
+    position: relative;
+    top: 10px;
+    left: 10px;
+
+    background-image: url("/tile.png");
+    background-repeat: repeat;
+    background-position-y: 10px;
+}
+
+.favoriteWeatherIcon {
+    /* border: 1px solid yellow; */
+    transform: translateY(-30px);
+}
+
+.userInfo {
+    margin-top: 30px;
+    width: 220px;
+    height: 200px;
+    padding: 20px;
+}
+
+.userInfo p {
+    color: #4C623B;
+    padding-bottom: 5px;
+}
+
+#userId, #userNickname {
+    color: #4C623B;
+    font-weight: 900;
+}
+
+#userFavorite {
+    color: #4C623B;
+    font-weight: 700;
+}
+
+.infoTitle {
+    font-weight: 900;
+    /* background-color: #4C623B;
+    color: #F3ECAE;
+    border-radius: 20px;
+    padding: 5px 10px 5px 10px; */
+}
+
+.btnWrapper {
+    display: flex;
+    justify-content: center;
+}
+
+.btnWrapper button {
+    font-weight: 900;
+    background-color: #4C623B;
+    color: #F3ECAE;
+    border-radius: 20px;
+    padding: 5px 10px 5px 10px;
+    margin: 5px;
+}
+
+#home{
+    background-color: #F3ECAE;
+    text-align: center;
+    width: 50px;
+    height: 50px;
+    min-width: 50px;
+    min-height: 50px;
+    border-radius: 30px;
+    color: #4C623B;
+    font-weight: 900;
+    margin-top: 20px;
+    margin-left: 165px;
+
 }
 
 
-#fw1 {
-    border: 1px solid black;
-    width: 250px;
-    height: 150px;
+/* 저장한 날씨 */
+.favoriteWeather {
+    /* border: 5px solid pink; */
+    margin-left: 40px;
+    width: 60%;
+    height: 660px;
+    padding-top: 10px;
+    min-width: 500px;
+}
+
+.favoriteWeather h3 {
+    text-align: center;
+    background-color: #4C623B;
+    line-height: 50px;
+    border-radius: 5px;
+    color: #F3ECAE;
+    margin-bottom: 10px;
+}
+
+.searchBar {
+    display: flex;
+    justify-content: center;
+    width: 80%;
+    min-width: 500px;
+}
+
+.searchCondition {
+    /* border: 1px solid black; */
+    background-color: #F3ECAE;
+    padding: 15px;
+    border-radius: 30px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.favoriteWeather select {
+    border: none;
+    border-radius: 20px;
+    margin: 5px;
+}
+
+.board {
+    height: 460px;
+    border-radius: 5px;
+    padding: 10px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background-image: url("/tile.png");
+    background-repeat: repeat;
+    border: 10px solid #F0F0F0;
+}
+
+#sIcon {
+    background-color: #4C623B;
+    margin-left: 20px;
+    width: 50px;
+    height: 50px;
+    min-width: 50px;
+    min-height: 50px;
+    border-radius: 30px;
+    color: #F3ECAE;
+}
+
+/* List */
+.fwList {
+    width: 100%;
+    height: 400px;
+    display: flex;
+    flex-wrap: wrap;
     margin-top: 10px;
+    overflow: hidden;
+    padding: 10px 10px 10px 50px;
+}
+
+/* Item Style */
+.fwItem {
+    background-color: #4C623B;
+    color: #F3ECAE;
+    border-radius: 20px;
+    width: 150px;
+    height: 150px;
+    padding: 10px;
+    margin: 10px;
+}
+
+.fwHeader {
+    border: none;
+    border-bottom: 2px solid #F3ECAE;
+    width: 100%;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    margin-bottom: 10px;
+}
+
+.fwDetails {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.fwDetails p {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+/* 임시 추가 삭제 */
+
+.tempFunction {
+    display: flex;
+    justify-content: right;
+    margin-top: 10px;
+}
+#add, #remove{
+    background-color: #F3ECAE;
+    margin-left: 20px;
+    width: 50px;
+    height: 50px;
+    min-width: 50px;
+    min-height: 50px;
+    border-radius: 30px;
+    color: #4C623B;
+}
+
+/* footer */
+
+footer {
+    width: 100vw;
+    height: 180px;
+    background-color: #959999;
+    position: fixed;
+    bottom: 0;
+    z-index: -1;
 }

@@ -5,6 +5,14 @@ header {
     padding-right: 12px;
 }
 
+a {
+    text-decoration: none;
+}
+
+button:hover {
+    cursor: pointer;
+}
+
 /* 메뉴(헤더 버전) */
 header .userName {
     color: #4C623B;
