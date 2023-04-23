@@ -101,3 +101,16 @@ function confirmPWC(){
         return true;
     }
 }
+
+function changeImg(weather){
+    document.querySelector('#wicon').setAttribute('src',`${weather}.png`);
+}
+
+/* pwCondition */
+document.querySelector('#pwCondition').addEventListener('mouseover',()=>{
+      document.querySelector('#pwConditionText').style.display = "flex";
+})
+
+document.querySelector('#pwCondition').addEventListener('mouseout',()=>{
+    document.querySelector('#pwConditionText').style.display = "none";
+})
