@@ -22,6 +22,7 @@ document.querySelector('#changePW').addEventListener('click',()=>{
 /* 저장한 날씨 */
 document.querySelector('#sIcon').addEventListener('click',()=>{
     alert('검색');
+    location.reload();
 })
 
 /* 저장, 삭제 */
