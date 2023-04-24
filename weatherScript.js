@@ -151,3 +151,85 @@ document.querySelector('#close').addEventListener('click',()=>{
 document.querySelector('#save').addEventListener('click',()=>{
     document.querySelector('.fvSaveWrapper').style.display = 'none';
 })
+
+/* 별점 */
+// document.querySelector('#rate1').addEventListener('click',()=>{
+//     //font-variation-settings: 'FILL' 0;
+//     const fill = document.defaultView.getComputedStyle(document.querySelector('#grade1')).getPropertyValue('font-variation-settings').split(' ')[0];
+//     if(document.defaultView.getComputedStyle(document.querySelector('#grade1')).getPropertyValue('font-variation-settings')==`${fill} ${0}`){
+//         document.querySelector('#grade1').style['font-variation-settings'] = `${fill} ${1}`;
+//     }
+//     else document.querySelector('#grade1').style['font-variation-settings'] = `${fill} ${0}`;
+// })
+
+
+document.querySelector('#grade1').addEventListener('click',()=>{
+    //font-variation-settings: 'FILL' 0;
+    const fill = document.defaultView.getComputedStyle(document.querySelector('#grade1')).getPropertyValue('font-variation-settings').split(' ')[0];
+    document.querySelector('#grade1').style['font-variation-settings'] = `${fill} ${1}`;
+    document.querySelector('#grade2').style['font-variation-settings'] = `${fill} ${0}`;
+    document.querySelector('#grade3').style['font-variation-settings'] = `${fill} ${0}`;
+    document.querySelector('#grade4').style['font-variation-settings'] = `${fill} ${0}`;
+    document.querySelector('#grade5').style['font-variation-settings'] = `${fill} ${0}`;
+})
+
+document.querySelector('#grade2').addEventListener('click',()=>{
+    //font-variation-settings: 'FILL' 0;
+    const fill = document.defaultView.getComputedStyle(document.querySelector('#grade1')).getPropertyValue('font-variation-settings').split(' ')[0];
+    document.querySelector('#grade1').style['font-variation-settings'] = `${fill} ${1}`;
+    document.querySelector('#grade2').style['font-variation-settings'] = `${fill} ${1}`;
+    document.querySelector('#grade3').style['font-variation-settings'] = `${fill} ${0}`;
+    document.querySelector('#grade4').style['font-variation-settings'] = `${fill} ${0}`;
+    document.querySelector('#grade5').style['font-variation-settings'] = `${fill} ${0}`;
+})
+
+document.querySelector('#grade3').addEventListener('click',()=>{
+    //font-variation-settings: 'FILL' 0;
+    const fill = document.defaultView.getComputedStyle(document.querySelector('#grade1')).getPropertyValue('font-variation-settings').split(' ')[0];
+    document.querySelector('#grade1').style['font-variation-settings'] = `${fill} ${1}`;
+    document.querySelector('#grade2').style['font-variation-settings'] = `${fill} ${1}`;
+    document.querySelector('#grade3').style['font-variation-settings'] = `${fill} ${1}`;
+    document.querySelector('#grade4').style['font-variation-settings'] = `${fill} ${0}`;
+    document.querySelector('#grade5').style['font-variation-settings'] = `${fill} ${0}`;
+})
+
+document.querySelector('#grade4').addEventListener('click',()=>{
+    //font-variation-settings: 'FILL' 0;
+    const fill = document.defaultView.getComputedStyle(document.querySelector('#grade1')).getPropertyValue('font-variation-settings').split(' ')[0];
+    document.querySelector('#grade1').style['font-variation-settings'] = `${fill} ${1}`;
+    document.querySelector('#grade2').style['font-variation-settings'] = `${fill} ${1}`;
+    document.querySelector('#grade3').style['font-variation-settings'] = `${fill} ${1}`;
+    document.querySelector('#grade4').style['font-variation-settings'] = `${fill} ${1}`;
+    document.querySelector('#grade5').style['font-variation-settings'] = `${fill} ${0}`;
+})
+
+document.querySelector('#grade5').addEventListener('click',()=>{
+    //font-variation-settings: 'FILL' 0;
+    const fill = document.defaultView.getComputedStyle(document.querySelector('#grade1')).getPropertyValue('font-variation-settings').split(' ')[0];
+    document.querySelector('#grade1').style['font-variation-settings'] = `${fill} ${1}`;
+    document.querySelector('#grade2').style['font-variation-settings'] = `${fill} ${1}`;
+    document.querySelector('#grade3').style['font-variation-settings'] = `${fill} ${1}`;
+    document.querySelector('#grade4').style['font-variation-settings'] = `${fill} ${1}`;
+    document.querySelector('#grade5').style['font-variation-settings'] = `${fill} ${1}`;
+})
+
+/* 피드백 */
+//userInfo
+document.querySelector('#pfeedback').addEventListener('click',()=>{
+    document.querySelector('.feedbackWrapper').style.display = 'flex';
+})
+
+//header
+document.querySelector('#hfeedback').addEventListener('click',()=>{
+    document.querySelector('.feedbackWrapper').style.display = 'flex';
+})
+
+// //임시 피드백 버튼 기능
+// document.querySelector('#sendFeedback').addEventListener('click',()=>{
+//     document.querySelector('.feedbackWrapper').style.display = 'none';
+// })
+
+/* feedback 종료 */
+document.querySelector('#feedbackClose').addEventListener('click',()=>{
+    document.querySelector('.feedbackWrapper').style.display = 'none';
+})

@@ -1,8 +1,9 @@
-header {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding-right: 12px;
+/* 전체 */
+body {
+    margin: 0;
+    overflow: hidden;
+    background-image: url("/floor.png");
+    background-position: 0 50px;
 }
 
 a {
@@ -13,7 +14,19 @@ button:hover {
     cursor: pointer;
 }
 
-/* 메뉴(헤더 버전) */
+/* header */
+header {
+    height: 80px;
+    position: sticky;
+    top: 0;
+    background-color: #ACA9A9;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding-right: 12px;
+}
+
+/* header user */
 header .userName {
     color: #4C623B;
     padding-left: 12px;
@@ -31,14 +44,15 @@ header .userName p {
     font-size: 24px;
 }
 
+/* header button */
 .hbtnWrapper {
     width: 200px;
     padding: 12px;
-    /* display: flex; */
     justify-content: space-around;
     align-items: center;
     display: none
 }
+
 .hbtnWrapper button {
     display: flex;
     height: 44px;
@@ -49,7 +63,6 @@ header .userName p {
     border: 0;
     border-radius: 60px;
     padding: 10px;
-    cursor: pointer;
 }
 
 .hbtnWrapper button:hover {
@@ -59,6 +72,49 @@ header .userName p {
 
 .hbtnWrapper button span {
     margin-right: 10px;
+}
+
+/* main */
+main {
+    padding-right: 90px;
+    height: 750px;
+    display: grid;
+    grid-template-columns: 350px auto 350px;
+}
+
+/* main left */
+.userInfo {
+    padding-top: 83px;
+    width: 300px;
+    height: 550px;
+}
+
+.userWrapper {
+    background-color: #D9D9D9;
+    border-top: 10px solid #D9D9D9;
+    border-right: 10px solid #D9D9D9;
+    border-bottom: 10px solid #D9D9D9;
+    border-top-right-radius: 30px;
+    border-bottom-right-radius: 30px;
+    width: 290px;
+    height: 550px;
+}
+
+.userInfo .user {
+    width: 250px;
+    height: 300px;
+    margin-left: 15px;
+    border-radius: 30px;
+    border: 10px solid #F0F0F0;
+    background-color: #F0F0F0;
+
+    background-image: url("/tile.png");
+    background-repeat: repeat;
+    background-position: 30px 30px;
+}
+
+.userName {
+    padding: 10px;
 }
 
 /* 메뉴(창문 버전) */
@@ -102,84 +158,80 @@ header .userName p {
     margin-right: 10px;
 }
 
-
-/* table 데이터 */
-
-/* table 전체 */
-/* div(.forecast) -> table(.info, .threeDays) */
-table {
-    width: 90%;
-    margin-bottom: 20px;
-}
-
-.info h2, .threeDays h2 {
-    color: #F3ECAE;
-    background-color: #4C623B;
-    border-radius: 30px;
-    padding: 5px;
-    width: 180px;
-    font-weight: 700;
-    text-align: center;
-    margin: auto;
-    margin-bottom: 20px;
-}
-
-/* forecast */
-/* table(.info) -> th -> tr -> td
-   td: .tdh, #infoLow, #infoHigh, #infoHumidity, #infoRain */
-.forecast .info {
+/* main center(Today Weather) */
+.todayWeather {
+    padding-top: 30px;
+    padding-left: 30px;
+    padding-right: 50px;
     display: flex;
     flex-direction: column;
+    justify-content: center;
     align-items: center;
-    padding: 10px;
+    height: 600px;
 }
 
-tr {
-    width: 100%;
-    font-size: 18px;
+.nowInfo {
+    height: 130px;
+    display: flex;
+    flex-direction: column;
+    justify-content: start;
+    align-items: center;
+    padding-top: 20px;
+}
+
+#windowBorder {
+    background-color: #D9D9D9;
+    border-radius: 70px;
+    width: 800px;
+    height: 500px;
+}
+
+#window {
+    background: #C3C3C3;
+    border: 10px solid #F0F0F0;
+    border-radius: 60px;
+    width: 760px;
+    height: 460px;
+
+    position: relative;
+    top: 10px;
+    left: 10px;
+
+    background-image: url("/tile.png");
+    background-repeat: repeat;
+    background-position: 30px 30px;
+}
+
+#clock {
+    font-size: 28px;
     color: #4C623B;
-}
-
-.tdh {
     font-weight: 700;
-    font-size: 18px;
-    color: #4C623B;
-    text-align: center;
-    /* padding: 10px 20px 0 20px; */
 }
 
-#infoLow, #infoHigh, #infoHumidity, #infoRain {
-    padding-bottom: 15px;
-    padding-top: 10px;
-    text-align: center;
+#refresh {
+    background-color: transparent;
+    border: none;
 }
 
-/* threeDays */
-/* table(.threeDays) -> th -> tr -> td
-   td: .futueDay .threeDaysLow .threeDaysHigh .threeDaysIcon */
-.threeDays {
-    padding: 10px;
+.forecast {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background-color: #ACA9A9;
+    padding-top: 30px;
+    margin-left: 30px;
+    margin-right: 20px;
 }
 
-.threeDays td {
-    padding: 10px;
+.todayWeatherIcon {
+    z-index: 1;
+    position: absolute;
+    top: 400px;
+    display: flex;
+    justify-content: center;
 }
 
-.futureDay, .threeDaysIcon {
-    text-align: center;
-}
-
-.threeDaysLow {
-    text-align: right;
-    color: blue;
-}
-
-.threeDaysHigh {
-    text-align: right;
-    color: red;
-}
-
-/*-------------------------*/
 /* 현재 날씨 */
 .temperature {
     width: 760px;
@@ -282,4 +334,310 @@ tr {
 #expText {
     margin-top: 170px;
     height: 150px;
+}
+
+/* main right(forecast) */
+/* div(.forecast) -> table(.info, .threeDays) */
+/* table(.info) -> th -> tr -> td
+   td: .tdh, #infoLow, #infoHigh, #infoHumidity, #infoRain */
+   .forecast .info {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 10px;
+}
+
+tr {
+    width: 100%;
+    font-size: 18px;
+    color: #4C623B;
+}
+
+.tdh {
+    font-weight: 700;
+    font-size: 18px;
+    color: #4C623B;
+    text-align: center;
+    /* padding: 10px 20px 0 20px; */
+}
+
+#infoLow, #infoHigh, #infoHumidity, #infoRain {
+    padding-bottom: 15px;
+    padding-top: 10px;
+    text-align: center;
+}
+
+/* threeDays */
+/* table(.threeDays) -> th -> tr -> td
+   td: .futueDay .threeDaysLow .threeDaysHigh .threeDaysIcon */
+.threeDays {
+    padding: 10px;
+}
+
+.threeDays td {
+    padding: 10px;
+}
+
+.futureDay, .threeDaysIcon {
+    text-align: center;
+}
+
+.threeDaysLow {
+    text-align: right;
+    color: blue;
+}
+
+.threeDaysHigh {
+    text-align: right;
+    color: red;
+}
+
+table {
+    width: 90%;
+    margin-bottom: 20px;
+}
+
+.info h2, .threeDays h2 {
+    color: #F3ECAE;
+    background-color: #4C623B;
+    border-radius: 30px;
+    padding: 5px;
+    width: 180px;
+    font-weight: 700;
+    text-align: center;
+    margin: auto;
+    margin-bottom: 20px;
+}
+
+/* Save pop-up */
+.fvSaveWrapper {
+    position: absolute;
+    width: 100%;
+    /* height: 800px; */
+    height: 80%;
+    background-color: transparent;
+    backdrop-filter: blur(3px);
+    justify-content: center;
+    padding-top: 80px ;
+    z-index: 2;
+    /* display: flex; */
+    display: none;
+}
+
+.fvSave {
+    width: 400px;
+    height: 550px;
+    background-color: #4C623B;
+    border-radius: 20px;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 20px 10px 10px 10px;
+    border: 10px solid #F3ECAE;
+}
+
+.saveInfo {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.fwHeader {
+    border-radius: 30px;
+    height: 20px;
+    padding: 15px 30px;
+    color: #4C623B;
+    background-color: #F3ECAE;
+    margin-bottom: 20px;
+}
+.fvSave h3 {
+    color: #F3ECAE;
+    padding-bottom: 20px;
+    padding-top: 25px;
+}
+
+.fwItem {
+    display: flex;
+    width: 100%;
+    flex-direction: column;
+}
+
+.fwDetails {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    justify-content: center;
+    align-items: center;
+}
+
+/* 기온 정보 */
+.fwTemp, .fwHumid, .fwRain {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    border: 1px solid #F3ECAE;
+    width: 250px;
+    height: 50px;
+    padding: 10px 20px;
+    border-radius: 5px;
+    margin: 10px;
+}
+
+.saveTempInfo, .saveHumidInfo, .saveRainInfo {
+    color: #F3ECAE;
+    padding: 10px;
+}
+
+.fwDetails select {
+    width: 150px;
+    height: 30px;
+    background-color: #F3ECAE;
+    color: #4C623B;
+    border-radius: 30px;
+    padding: 5px;
+    border: none;
+    font-weight: 700;
+}
+
+.fwTemp select:focus{
+    outline: none;
+}
+
+.saveForm {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.saveForm input[type="button"]{
+    width: 100px;
+    height: 40px;
+    background-color: #F3ECAE;
+    border: none;
+    border-radius: 30px;
+    margin-top: 20px;
+    color: #4C623B;
+    font-weight: 900;
+    cursor: pointer;
+}
+
+.fwDetails span {
+    display: block;
+    text-align: center;
+    padding: 5px;
+}
+
+#close {
+    position: relative;
+    transform: translate(170px,-515px);
+    background-color: transparent;
+    color: #F3ECAE;
+    font-size: 2rem;
+    border: none;
+    cursor: pointer;
+}
+
+/* feedback pop-up */
+.feedbackWrapper {
+    position: absolute;
+    width: 100%;
+    /* height: 800px; */
+    /* padding-top: 100px; */
+    height: 80%;
+    background-color: transparent;
+    backdrop-filter: blur(5px);
+    /* display: flex; */
+    justify-content: center;
+    padding-top: 250px;
+    z-index: 2;
+    display: none;
+}
+
+.feedback {
+    width: 400px;
+    height: 200px;
+    background-color: #4C623B;
+    border-radius: 20px;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 20px 10px 10px 10px;
+    border: 10px solid #F3ECAE;
+}
+
+#feedbackClose {
+    position: relative;
+    transform: translate(180px, -185px);
+    background-color: transparent;
+    color: #F3ECAE;
+    font-size: 2rem;
+    border: none;
+    cursor: pointer;
+}
+
+.feedback h3 {
+    color: #F3ECAE;
+}
+
+.feedbackForm {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.feedbackForm input[type="submit"]{
+    width: 100px;
+    height: 40px;
+    background-color: #F3ECAE;
+    border: none;
+    border-radius: 30px;
+    margin-top: 20px;
+    color: #4C623B;
+    font-weight: 900;
+    cursor: pointer;
+}
+
+.feedbackForm input[type="radio"]{
+  display: none;
+}
+
+.feedbackForm label {
+    color: #F3ECAE;
+
+}
+
+.feedbackForm label span{
+    color: #F3ECAE;
+    font-variation-settings:
+    'FILL' 0;
+    font-size: 3rem;
+    cursor: pointer;
+}
+
+/* 반응형 */
+@media screen and (max-width:1650px){
+    main {
+        grid-template-columns: auto 350px;
+    }
+
+    .userInfo {
+        display: none;
+    }
+
+    header .userName {
+        display: block;
+    }
+
+    .todayWeather {
+        margin-left: 50px;
+    }
+
+    .hbtnWrapper {
+        display: flex;
+    }
 }

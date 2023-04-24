@@ -6,7 +6,6 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>메인페이지</title>
     <link rel="stylesheet" href="weatherStyle.css">
-    <link rel="stylesheet" href="weatherStyleG.css">
     <script src="weatherScript.js" defer></script>
 
      <!--google material icon-->
@@ -39,7 +38,7 @@
                     <div class="btnWrapper">
                         <button id="saveWeather"><span class="material-symbols-rounded">favorite</span>날씨 저장</button>
                         <a href="myPage.html"><button id="myPage"><span class="material-symbols-rounded">account_circle</span>마이페이지</button></a>
-                        <button id="feedback"><span class="material-symbols-rounded">chat</span>피드백</button>
+                        <button id="pfeedback"><span class="material-symbols-rounded">chat</span>피드백</button>
                     </div>
                 </div>
             </div>
@@ -187,8 +186,21 @@
             <button id="close"><span class="material-symbols-outlined">close</span></button>
         </div>
     </div>
+    <div class="feedbackWrapper">
+        <div class="feedback">
+            <h3>리뷰 남기기</h3>
+                <form action="GET" class="feedbackForm">
+                    <div class="starWrapper">
+                        <input type="radio" name="reviewStar" value="s1" id="rate1"><label for="rate1"><span class="material-symbols-outlined" id="grade1">grade</span></label>
+                        <input type="radio" name="reviewStar" value="s2" id="rate2"><label for="rate2"><span class="material-symbols-outlined" id="grade2">grade</span></label>
+                        <input type="radio" name="reviewStar" value="s3" id="rate3"><label for="rate3"><span class="material-symbols-outlined" id="grade3">grade</span></label>
+                        <input type="radio" name="reviewStar" value="s4" id="rate4"><label for="rate4"><span class="material-symbols-outlined" id="grade4">grade</span></label>
+                        <input type="radio" name="reviewStar" value="s5" id="rate5"><label for="rate5"><span class="material-symbols-outlined" id="grade5">grade</span></label>
+                    </div>
+                    <input type="submit" value="평가 남기기" id="sendFeedback">
+                </form>
+                <button id="feedbackClose"><span class="material-symbols-outlined">close</span></button>
+        </div>
     </main>
-
-    <footer></footer>
 </body>
 </html>
