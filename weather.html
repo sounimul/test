@@ -131,7 +131,64 @@
 
             </table>
     </div>
+    <div class="fvSaveWrapper">
+        <div class="fvSave">
+            <h3>날씨 저장</h3>
+            <div class="saveInfo">
+                <form action="" class="saveForm">
+                    <article class="fwItem">
+                        <header class="fwHeader">
+                            <span>4월 24일 월요일</span>
+                            <span>달서구</span>
+                            <span class="material-symbols-outlined">sunny</span>
+                        </header>
+                        <div class="fwDetails">
+                            <div class="fwTemp">
+                                <div class="saveTempInfo">
+                                    <span class="material-symbols-outlined">device_thermostat</span>
+                                    <span>25°C</span>
+                                </div>
+                                <select name="saveTempComment" id="">
+                                    <option value="none">기온 어때요?</option>
+                                    <option value="hot">더워요</option>
+                                    <option value="warm">따뜻해요</option>
+                                </select>
+                            </div>
+
+                            <div class="fwHumid">
+                                <div class="saveHumidInfo">
+                                    <span class="material-symbols-outlined">water_drop</span>
+                                    <span>60%</span>
+                                </div>
+                                <select name="saveHumidComment" id="">
+                                    <option value="none">습도 어때요?</option>
+                                    <option value="humid">습해요</option>
+                                    <option value="dry">건조해요</option>
+                                </select>
+                            </div>
+
+                            <div class="fwRain">
+                                <div class="saveRainInfo">
+                                    <span class="material-symbols-outlined">rainy</span>
+                                    <span>2.5mm</span>
+                                </div>
+                                <select name="saveRainComment" id="">
+                                    <option value="none">비는 어떻게 와요?</option>
+                                    <option value="heavy">많이 와요</option>
+                                    <option value="no">안와요</option>
+                                </select>
+                            </div>
+                        </div>
+                    </article>
+                    <input type="button" value="저장" id="save">
+                </form>
+            </div>
+
+            <button id="close"><span class="material-symbols-outlined">close</span></button>
+        </div>
+    </div>
     </main>
+
     <footer></footer>
 </body>
 </html>

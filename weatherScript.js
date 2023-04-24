@@ -131,3 +131,23 @@ setInterval(getClock,1000);
 const nickName = prompt('닉네임을 입력해 주세요.','날씨 요정');
 document.querySelector('#userNickname').innerText = nickName;
 document.querySelector('#huserNickname').innerText = nickName;
+
+/* 날씨 저장 */
+//userInfo
+document.querySelector('#saveWeather').addEventListener('click',()=>{
+    document.querySelector('.fvSaveWrapper').style.display = 'flex';
+})
+
+//header
+document.querySelector('#hsaveWeather').addEventListener('click',()=>{
+    document.querySelector('.fvSaveWrapper').style.display = 'flex';
+})
+
+document.querySelector('#close').addEventListener('click',()=>{
+    document.querySelector('.fvSaveWrapper').style.display = 'none';
+})
+
+//임시 저장 버튼 기능
+document.querySelector('#save').addEventListener('click',()=>{
+    document.querySelector('.fvSaveWrapper').style.display = 'none';
+})

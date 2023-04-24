@@ -135,6 +135,139 @@ footer {
     justify-content: center;
 }
 
+/* 날씨 저장 팝업 */
+
+.fvSaveWrapper {
+    position: absolute;
+    width: 100%;
+    height: 800px;
+    background-color: transparent;
+    backdrop-filter: blur(3px);
+    /* display: flex; */
+    justify-content: center;
+    padding-top: 100px;
+    z-index: 2;
+    display: none;
+}
+
+.fvSave {
+    width: 400px;
+    height: 550px;
+    background-color: #4C623B;
+    border-radius: 20px;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 20px 10px 10px 10px;
+    border: 10px solid #F3ECAE;
+}
+
+.saveInfo {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.fwHeader {
+    border-radius: 30px;
+    height: 20px;
+    padding: 15px 30px;
+    color: #4C623B;
+    background-color: #F3ECAE;
+    margin-bottom: 20px;
+}
+.fvSave h3 {
+    color: #F3ECAE;
+    padding-bottom: 20px;
+    padding-top: 25px;
+}
+
+.fwItem {
+    display: flex;
+    width: 100%;
+    flex-direction: column;
+}
+
+.fwDetails {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    justify-content: center;
+    align-items: center;
+}
+
+/* 기온 정보 */
+.fwTemp, .fwHumid, .fwRain {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    border: 1px solid #F3ECAE;
+    width: 250px;
+    height: 50px;
+    padding: 10px 20px;
+    border-radius: 5px;
+    margin: 10px;
+}
+
+.saveTempInfo, .saveHumidInfo, .saveRainInfo {
+    color: #F3ECAE;
+    padding: 10px;
+}
+
+.fwDetails select {
+    width: 150px;
+    height: 30px;
+    background-color: #F3ECAE;
+    color: #4C623B;
+    border-radius: 30px;
+    padding: 5px;
+    border: none;
+    font-weight: 700;
+}
+
+.fwTemp select:focus{
+    outline: none;
+}
+
+.saveForm {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.saveForm input[type="button"]{
+    width: 100px;
+    height: 40px;
+    background-color: #F3ECAE;
+    border: none;
+    border-radius: 30px;
+    margin-top: 20px;
+    color: #4C623B;
+    font-weight: 900;
+    cursor: pointer;
+}
+
+.fwDetails span {
+    display: block;
+    text-align: center;
+    padding: 5px;
+}
+
+#close {
+    position: relative;
+    transform: translate(170px,-515px);
+    background-color: transparent;
+    color: #F3ECAE;
+    font-size: 2rem;
+    border: none;
+    cursor: pointer;
+}
+
+
+
 /* 반응형 */
 
 @media screen and (max-width:1650px){
