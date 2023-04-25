@@ -178,6 +178,7 @@ button:hover {
     display: flex;
     justify-content: center;
     align-items: center;
+    color: #4C623B;
 }
 
 .favoriteWeather select {
@@ -278,4 +279,77 @@ select {
     min-height: 50px;
     border-radius: 30px;
     color: #4C623B;
+}
+
+/* 비밀번호 변경 */
+.changePWbackground {
+    display: none;
+    /* display: flex; */
+    position: absolute;
+    background-color: transparent;
+    width: 100%;
+    height: 740px;
+    justify-content: center;
+    align-items: center;
+    backdrop-filter: blur(5px);
+}
+
+.changePW {
+    background-color: #F3ECAE;
+    width: 300px;
+    height: 400px;
+    padding: 20px;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: start;
+    align-items: center;
+    border-radius: 30px;
+}
+
+.changePW h3 {
+    padding-top: 15px;
+    padding-bottom: 15px;
+}
+
+form {
+    width: 80%;
+    height: 300px;
+    display: flex;
+    flex-direction: column;
+    align-items: left;
+}
+
+.changePW input {
+    background-color: transparent;
+    border: none;
+    border-bottom: #4C623B 1px solid;
+    padding-top: 20px;
+    margin-bottom: 20px;
+}
+
+.changePW input:focus {
+    outline: none;
+}
+
+.changPW label {
+    color: #4C623B;
+}
+
+input[type="submit"]{
+    margin-top: 20px;
+    margin: auto;
+    width: 100px;
+    height: 40px;
+    background-color: #4C623B;
+    border: none;
+    color: #F3ECAE;
+    border-radius: 20px;
+    padding: 5px;
+    cursor: pointer;
+}
+
+#closeChangePW {
+    position: absolute;
+    transform: translate(130px);
 }
