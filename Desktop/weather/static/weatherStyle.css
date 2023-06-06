@@ -1,0 +1,929 @@
+/* 전체 */
+:root {
+    --light-color: #aecbe8;
+    --dark-color: #0066cc;
+}
+
+body {
+    margin: 0;
+    width: 100vw;
+    height: 100vh;
+    background-color: var(--light-color);
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+    overflow: hidden;
+}
+
+a {
+    text-decoration: none;
+}
+
+ul, li{
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+button {
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border: none;
+    background-color: transparent;
+}
+
+button:hover, a:hover, li:hover {
+    cursor: pointer;
+}
+
+/* 메뉴 오픈 버전 */
+#openMenu {
+    display: none;
+}
+
+.menuWrapper {
+    width: 268px;
+    height: 64px;
+    position: fixed;
+    top: 24px;
+    right: 24px;
+}
+
+.menuBtn {
+    width: 100%;
+
+    display: flex;
+    justify-content: space-between;
+    align-items: start;
+}
+
+.menuBtn button {
+    width: 54px;    
+    height: 54px;
+    border-radius: 60px;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    color: var(--light-color);
+    background-color: var(--dark-color);
+}
+
+.menuBtn button:hover {
+    color: #fee;
+    height: 58px;
+    width: 58px;
+}
+
+/* main > .menuWrapper(200px), .todayWeatherWrapper(auto), .forecast(350px)
+
+/* main */
+.mainWrapper {
+    width: 1366px;
+    height: 768px;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    background-color: transparent;
+
+    /* border: 1px solid black; */
+}
+
+main {
+    width: 1200px;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    /* border: 5px solid black; */
+}
+
+/* todayWeather 800px > 650px */
+.todayWeatherWrapper {
+    width: 800px;
+    height: 700px;
+
+    /* border: 5px solid black; */
+}
+
+.todayWeatherBorder {
+    width: 650px;
+    height: 360px;
+    border-radius: 70px;
+
+    background-color: #D9D9D9;
+    box-shadow: 0 0px 3px 4px rgba(0,0,0,0.2);
+
+    position: relative;
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+.todayWeather {
+    width: 610px;
+    height: 320px;
+    border-radius: 60px;
+
+    background-image: url("img/tile.png"); 
+    background-repeat: repeat;
+    background-position: 30px 30px;
+    box-shadow: inset 0 0px 5px 3px rgba(0,0,0,0.2),
+                      0 0px 4px 2px rgba(0,0,0,0.2);
+
+    border: 10px solid #F0F0F0;
+
+    position: relative;
+    top: 10px;
+    left: 10px;    
+}
+
+.nowInfoWrapper {
+    width: 100%;
+    height: 80px;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    
+    padding-top: 16px;
+    margin-bottom: 32px;
+}
+
+.nowInfo{
+    display: flex;
+}
+
+.infoDetail {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+#refresh {
+    color: var(--dark-color);
+    background-color: transparent;
+    border: none;
+
+    margin-left: 8px;
+
+    position: absolute;
+    transform: translate(150px, 8px);
+}
+
+.temperature {
+    width: 610px;
+    height: 70px;
+    
+    background-color: var(--dark-color);
+    box-shadow: 0 0px 4px 2px rgba(0,0,0,0.2);
+    
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+}
+
+/* 날씨 정보 */
+
+/* 과거 날씨 */
+.past, .future {
+    color: #fee;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.pastInfo, .futureInfo {
+    width: 80px;
+
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+#pastHour, #futureHour {
+    margin-bottom: 5px;
+}
+
+#pastWeatherIcon, #futureWeatherIcon {
+    font-size: 24px;
+}
+
+#pastTemp, #futureTemp {
+    font-size: 20px;
+    font-weight: 700;
+}
+
+/* 1시간 전 날씨 */
+.past {
+    width: 160px;
+    height: 100px;
+
+    padding-left: 10px;
+}
+
+/* 1시간 후 날씨 */
+.future {
+    width: 160px;
+    height: 100px;
+    padding-right: 10px;
+}
+
+/* 현재 날씨 */
+.now {
+    width: 300px;
+    height: 120px;
+    border-radius: 100px;
+
+    background-color: #fff;
+    box-shadow: 0 0px 4px 3px rgba(0,0,0,0.1), inset 0 0px 4px 3px rgba(0,0,0,0.2);
+    border: 8px solid var(--dark-color);
+
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}
+
+#currentExp{
+    font-size: 24px;
+    font-weight: 900;
+    color: var(--dark-color);
+}
+
+#currentTemp{
+    width: 80px;
+    height: 80px;
+    border-radius: 50%;
+
+    font-size: 26px;
+    font-weight: 700;
+
+    background-color: var(--dark-color);
+    color: #fee;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+#currentTemp span {
+    font-size: 20px;
+
+    margin-left: 5px;
+}
+
+/* 날씨 캐릭터 */
+.todayWeatherIcon {
+    width: 100%;
+    height: 240px;
+    border-radius: 20px;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: start;
+    align-items: center;
+
+    margin-top: 40px;
+}
+
+.chairBack{
+    width: 80%;
+    height: 140px;
+    border-radius: 20px;
+
+    background-color: #D9D9D9;
+    box-shadow: 0 -2px 5px 2px rgba(0,0,0,0.1);
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.chairSeat{
+    width: 80%;
+    height: 60px;
+    border-top-left-radius: 20px;
+    border-top-right-radius: 20px;
+
+    background-color: #C3C3C3;
+    box-shadow: 0 5px 10px 3px rgba(0,0,0,0.2);
+}
+
+.shadow {
+    width: 80%;
+    height: 20px;
+    border-radius: 30%;
+
+    background: transparent;
+    box-shadow: 0 70px 6px 2px rgba(0,0,0,0.1);
+}
+
+#wicon:hover{
+    filter: drop-shadow(0 5px 2px #fee);
+}
+
+/* 상세 정보 */
+#wicon {
+    transform: translateY(-280px);
+    filter : drop-shadow(0 2px 2px rgba(0,0,0,0.2));
+}
+
+/* forecast 400px > 350px */
+/* 예보 데이터 리스트 */
+.forecast li {
+    width: 50%;
+    padding: 10px;
+}
+
+dl {
+    margin: 0;
+}
+
+dt, dd {
+    margin: 0;
+    padding: 0;
+
+    text-align: center;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+dt {
+    font-weight: 700;
+    font-size: 14px;
+    margin-bottom: 2px
+}
+
+.forecastWrapper{
+    width: 400px;
+    height: 700px;
+
+    display: flex;
+    justify-content: center;
+    align-items: start;
+
+    /* border: 5px solid black; */
+}
+
+.forecast {
+    width: 350px;    
+    border-radius: 40px;
+}
+
+/* 오늘 날씨 상세 정보 */
+.today {
+    padding: 16px 0;
+}
+
+.today h3 {
+    margin-top: 0;
+}
+
+.todayDetail {
+    width: 300px;
+    border-radius: 10px;
+
+    border: 1px solid rgba(255,255,255,0.3);
+    box-shadow: 0 0 6px 2px rgba(0,0,0,0.1);
+    background-image: linear-gradient(135deg, rgba(255,255,255,0.3) , transparent , rgba(255,255,255,0.3) );
+    
+    display: flex;
+}
+
+.todayDetail li:first-child{
+    border-top-left-radius: 10px;
+    border-bottom-left-radius: 10px;
+}
+
+.todayDetail li:last-child{
+    border-top-right-radius: 10px;
+    border-bottom-right-radius: 10px;
+}
+
+.todayDetail li:hover {
+    background-color: rgba(0, 26, 255, 0.4);
+    color: #fee;
+    cursor: pointer;
+}
+
+.todayDetail li:nth-child(2):hover {
+    background-color: rgba(255, 0, 55, 0.4);
+    color: #fee;
+}
+
+.today li:hover {
+    background-image: linear-gradient(135deg, rgba(255,255,255,0.3) , transparent , rgba(255,255,255,0.3) );
+}
+
+/* 주간예보 */
+.week {
+    padding: 16px 0;
+}
+.week li {
+    width: 100%;
+    padding: 12px 0;
+    border-radius: 20px;
+ 
+    display: flex;
+    justify-content: space-around;
+}
+
+.futureDay {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 17px;
+
+    font-weight: 600;
+    /* color: var(--dark-color); */
+}
+
+.low span, .high span {
+    font-size: 24px;
+    font-weight: 200;
+}
+
+.low dd:first-child, .high dd:first-child{
+    margin-bottom: 4px;
+
+    font-weight: 700;
+}
+
+.low dd:first-child {
+    color: #0800e7;
+}
+
+.high dd:first-child {
+    color: #e70010;
+}
+
+.windo {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.futureDays {
+    width: 300px;
+    padding: 0;
+    border-radius: 10px;
+
+    background-image: linear-gradient(135deg, rgba(255,255,255,0.2) 20%, transparent 80%);
+    border: 1px solid rgba(255,255,255,0.3);
+    box-shadow: 0 0 6px 2px rgba(0,0,0,0.1);
+}
+
+.futureDays li {
+    border-radius: 0;
+    border-bottom: 1px solid #fee;
+}
+
+.futureDays li:last-child {
+     border: none;
+}
+
+.futureDays li:hover {
+    background-image: linear-gradient(135deg, rgba(255,255,255,0.3) , transparent , rgba(255,255,255,0.3) );
+}
+
+.futureDays div {
+    width: 40px;
+}
+
+/* pop-up 기본 스타일 */
+.buttons {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    padding: 16px;
+}
+
+.popup input[type="submit"], .popup button {
+    
+    /* submit 스타일 없애기 */
+    background-color: transparent;
+    border: none;
+
+    cursor: pointer; /* submit 커서 */
+
+    width: 100px;
+    height: 40px;
+    margin: 0 8px;
+    
+    border: 2px solid var(--light-color);
+    border-radius: 30px;
+
+    font-weight: 900;
+}
+
+.popup input[type="submit"]:hover, .popup button:hover {
+    background-color: var(--light-color);
+}
+
+select, option {
+    margin: 0;
+    padding-left: 8px;
+}
+
+select:focus {
+    outline: var(--dark-color) 2px solid;
+}
+
+/* Save pop-up */
+.fvSaveWrapper {
+    width: 100%;
+    height: 100%;
+
+    /* background-color: transparent; */
+    background-color: rgba(0,0,0,0.5);
+    backdrop-filter: blur(8px);
+    
+    /* display: flex; */
+    justify-content: center;
+    align-items: center;
+    position: absolute;
+
+    z-index: 2;
+    display: none;
+}
+
+.fvSave {
+    width: 400px;
+    height: 550px;
+    padding: 20px;
+    border-radius: 20px;
+
+    background-color: #fff;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.saveInfo {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.fwInfoWrapper {
+    border-radius: 10px;
+    padding: 10px 15px;
+    margin-top: 20px;
+    margin-bottom: 20px;
+
+    background-color: var(--dark-color);
+    color: #fee;
+
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}
+
+.fwInfoWrapper div {
+    padding: 2.5px 10px 2.5px 10px;
+}
+
+.fwItem {
+    width: 100%;
+    padding-bottom: 16px;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.fwDetails {
+    width: 100%;
+    padding: 16px;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+/* 기온 정보 */
+.fwTemp, .fwHumid, .fwRain {
+    width: 250px;
+    height: 50px;
+    border-radius: 125px;
+    padding: 10px;
+
+    display: flex;
+    justify-content: space-between;
+    align-items:center;
+}
+
+.saveTempInfo, .saveHumidInfo, .saveRainInfo {
+    width: 60px;
+    height: 50px;
+    padding: 16px 0;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;    
+}
+
+.fwDetails select {
+    width: 150px;
+    height: 30px;
+    border-radius: 30px;
+
+    border: 1px solid var(--dark-color);
+
+    font-weight: 700;
+}
+
+.saveForm {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.fwDetails span {
+    display: block;
+    text-align: center;
+    padding: 4px;
+}
+
+/* feedback pop-up */
+.feedbackWrapper {
+    width: 100%;
+    height: 100%;
+
+    /* background-color: transparent; */
+    background-color: rgba(0,0,0,0.5);
+    backdrop-filter: blur(5px);
+
+    display: none;
+    justify-content: center;
+    align-items: center;
+
+    position: absolute;
+    z-index: 11;
+}
+
+.feedback {
+    width: 400px;
+    height: 360px;
+    border-radius: 20px;
+    padding: 16px;
+
+    background-color: #fff;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.feedbackForm {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.starWrapper {
+    padding: 16px;
+}
+
+.feedbackForm input[type="radio"]{
+  display: none;
+}
+
+.feedbackForm label {
+    color: var(--light-color);
+}
+
+.feedbackForm label span{
+    font-variation-settings: 'FILL' 0;
+    font-size: 3rem;
+
+    cursor: pointer;
+}
+
+#comment {
+    margin: 20px 0 20px 0;
+
+    outline: none;
+    resize: none;
+}
+
+/* 모바일 버전 */
+    /* @media (min-width: 320px) and (max-width: 540px) */
+    @media (max-width: 540px){
+
+    body {
+        overflow: auto;
+        padding-top: 78px;
+        display: block;
+    }
+
+    /* 메뉴 */
+    /* .menuWrapper > .menu > .menuBtn > button, a */
+    /* 숨김 버전 */
+    #openMenu {
+        display: block;
+        height: 44px;
+        width: 44px;
+        margin: 8px 0;
+        border-radius: 60px;
+
+        color: var(--light-color);
+        background-color: var(--dark-color);
+        box-shadow: 0 0 12px 4px rgba(0,0,0,0.1);
+    }
+
+    #openMenu:hover {
+        color: #fee;
+    }
+
+    .menuWrapper {
+        width: 54px;
+        height: 248px; /* 176 */
+
+        display: flex;
+        flex-direction: column;
+        justify-content: start;
+        align-items: center;
+
+        z-index: 11;
+    }
+    
+    .menuBtn {
+        width: 54px;
+        height: 180px;
+        border-radius: 60px;
+
+        flex-direction: column;
+        align-items: center;
+        display: none;
+
+        background-color: transparent;
+    }
+    
+    /* 메뉴 버튼 */
+     .menuBtn button {
+        height: 44px;
+        width: 44px;
+        margin: 8px 0;
+    }
+    
+    .menuBtn button:hover {
+        height: 44px;
+        width: 44px;
+    }
+    
+    
+    /* mainWrapper(320px) > main(300px)
+    /* main */
+    .mainWrapper {
+        width: 100%;
+        height: auto;
+        /* border: 1px solid red; */
+        padding: 0;
+
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+    
+    .main {
+        width: 320px;
+        height: auto;
+        padding: 0;
+        flex-direction: column;
+    }
+    
+    /* main center(Today Weather) */
+    /* .todayWeatherWrapper > .todayWeatherBorder > .todayWeather > .nowInfo > /#clock, #location / .temperature > .past, .now, .future */
+    .todayWeatherWrapper {
+        width: 320px;
+        height: auto;
+        z-index: 1;
+        margin-top: 24px;
+    }
+    
+    .todayWeatherBorder {
+        width: 300px;
+        height: 260px;
+    }
+    
+    .todayWeather {
+        width: 260px; 
+        height: 220px;
+    }
+
+    #refresh {
+        transform: translate(80px, 12px);
+    }
+
+    .temperature {
+        width: 100%;
+        height: 40px;
+        justify-content: center;
+    }
+    
+    /* 날씨 정보 */
+    .past, .future {
+        display: none;
+    }
+    
+    /* 현재 날씨 */
+    .now {
+        width: 200px;
+        height: 80px;
+        justify-content: space-around;
+    }
+    
+    #currentExp{
+        font-size: 16px;
+    }
+    
+    #currentTemp{
+        font-size: 18px;
+        width: 60px;
+        height: 60px;
+    }
+    
+    .todayWeatherIcon {
+        margin-top: 20px;
+    }
+
+    .chairSeat{
+        width: 80%;
+        height: 45px;
+    }
+    
+    .shadow {
+        width: 80%;
+    }
+    
+    /* forecast 350px */
+    .forecastWrapper{
+        width: 320px;
+        height: auto;
+        padding: 0;
+        margin-top: 54px;
+        padding-bottom: 16px;
+    }
+    
+    .forecast {
+        width: 300px;
+    }
+
+    /* Save pop-up */
+
+    .fvSaveWrapper{
+        position: absolute;
+        top: 0;
+    }
+    .fvSave {
+        width: 300px;
+    }
+
+    .fwTemp, .fwHumid, .fwRain{
+        width: 240px;
+    }
+
+    .popup input[submit]:focus, .popup button:focus{
+        background-color: var(--light-color);
+    }
+    
+    /* feedback pop-up */
+    .feedbackWrapper {
+        position: absolute;
+        top: 0;
+    }
+    
+    .feedback {
+        width: 300px;
+    }
+
+    .feedbackForm label span{
+        font-size: 2.5rem;    
+    }
+   
+}
