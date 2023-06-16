@@ -1,0 +1,625 @@
+/* 전체 */
+:root {
+    /* --background-color: #EFF4E7; */
+    --background-color: white;
+
+    --element-background-color: #4C623B;
+    --element-color: #F3ECAE;
+
+    --point-color: #4C623B;
+    --point-color-reverse: #F3ECAE;
+}
+
+body {
+    margin: 0;
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    /* justify-content: space-between; */
+    overflow: hidden;
+    background-color: var(--background-color);
+}
+
+a {
+    text-decoration: none;
+}
+
+button:hover {
+    cursor: pointer;
+}
+
+ul, li{
+    list-style: none;
+    padding: 0;
+}
+
+button {
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+/* main > .menuWrapper(200px), .todayWeatherWrapper(auto), .forecast(350px)
+
+/* main */
+.mainWrapper {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-width: 1280px; /*640*/
+}
+
+.main {
+    background-color: var(--background-color);
+    padding-right: 90px;
+    width: 100%;
+    height: 800px;
+    display: flex;
+    /* justify-content: center; */
+    justify-content: space-evenly;
+    /* display: grid; */
+    /* grid-template-columns: 200px 600px 350px; */
+    margin: auto;
+    background: linear-gradient(transparent 81%, var(--point-color) 19%);
+}
+
+/* main left(Menu) */
+/* .menuWrapper > .menu > .menuBtn > button, a */
+.menuWrapper {
+    width: 200px;
+    display: flex;
+    flex-direction: column;
+    justify-content: start;
+    /* align-items:end; */
+    align-items: center;
+    /* border: 1px solid black; */
+}
+
+#openMenu {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 60px;
+    width: 60px;
+    color: var(--point-color-reverse);
+    background-color: var(--point-color);
+    border: var(--element-color) 1.5px solid;
+    border-radius: 60px;
+    z-index: 2;
+}
+
+.menu {
+    margin-top: 20px;
+    width: 60px;
+    height: 400px;
+    background-color: var(--element-background-color);
+    border-radius: 60px;
+
+    display: none;
+    justify-content: center;
+    align-items: start;
+
+    padding-top: 100px;
+
+    position: relative;
+    top: -80px;
+    z-index: 1;
+}
+
+.menuBtn {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    height: 200px;
+}
+
+/* 메뉴 버튼 */
+.menuBtn button {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 44px;
+    width: 44px;
+    color: var(--element-color);
+    background-color: transparent;
+    border: var(--element-color) 1.5px solid;
+    border-radius: 60px;
+}
+
+/* main center(Today Weather) */
+/* .todayWeatherWrapper > .todayWeatherBorder > .todayWeather > .nowInfo > /#clock, #location / .temperature > .past, .now, .future */
+.todayWeatherWrapper {
+    width: 700px;
+    /* padding-top: 30px; */
+    display: flex;
+    flex-direction: column;
+    justify-content: start;
+    align-items: center;
+}
+
+.todayWeatherBorder {
+    background-color: #D9D9D9;
+    border-radius: 70px;
+    width: 650px;
+    height: 400px;
+}
+
+.todayWeather {
+    background: #C3C3C3;
+    border: 10px solid #F0F0F0;
+    border-radius: 60px;
+    width: 610px;
+    height: 360px;
+
+    position: relative;
+    top: 10px;
+    left: 10px;
+
+    background-image: url("tile.png");      /* 경로 변경*/
+    background-repeat: repeat;
+    background-position: 30px 30px;
+}
+
+.nowInfo {
+    height: 120px;
+    display: flex;
+    flex-direction: column;
+    justify-content: start;
+    align-items: center;
+    padding-top: 30px;
+}
+
+.locationWrapper {
+    width: 200px;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    margin-top: 8px;
+}
+
+#clock {
+    font-size: 28px;
+    color: var(--point-color);
+    font-weight: 700;
+}
+
+#refresh {
+    color: var(--point-color);
+    background-color: transparent;
+    border: none;
+}
+
+.temperature {
+    width: 610px;
+    height: 80px;
+    height: 100px;
+    background-color: var(--point-color);
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+}
+
+/* 날씨 정보 */
+.past, .future {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    color: var(--point-color-reverse);
+}
+
+.pastInfo, .futureInfo {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 110px;
+}
+
+#pastHour, #futureHour {
+    margin-bottom: 5px;
+}
+
+#pastWeatherIcon, #futureWeatherIcon {
+    font-size: 24px;
+}
+
+#pastTemp, #futureTemp {
+    font-size: 20px;
+    font-weight: 700;
+}
+
+/* 1시간 전 날씨 */
+.past {
+    width: 190px;
+    height: 100px;
+    padding-left: 10px;
+}
+
+/* 현재 날씨 */
+.now {
+    width: 350px;
+    height: 110px;
+    background-color: var(--point-color-reverse);
+    border-radius: 100px;
+    border: 8px solid var(--point-color);
+    /* text-align: center; */
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}
+
+#currentExp{
+    font-size: 30px;
+    color: var(--point-color);
+    font-weight: 900;
+}
+
+#currentTemp{
+    font-size: 30px;
+    font-weight: 900;
+    color: var(--point-color);
+}
+
+/* 1시간 후 날씨 */
+.future {
+    width: 190px;
+    height: 100px;
+    padding-right: 10px;
+}
+
+/* 현재 날씨 캐릭터 */
+.todayWeatherIcon {
+    z-index: 1;
+    position: relative;
+    top: -65px;
+    display: flex;
+    justify-content: center;
+}
+
+#wicon {
+    width: 700px;
+}
+
+/* main right(forecast) 350px */
+.forecast {
+    width: 350px;
+    display: flex;
+    flex-direction: column;
+    justify-content: start;
+    align-items: center;
+    /* padding-top: 10px; */
+    margin-right: 20px;
+    /* border: 1px solid black; */
+}
+
+.forecast .info {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    /* padding: 10px; */
+}
+
+.forecastSubTitle {
+    font-weight: 700;
+    font-size: 18px;
+    color: var(--point-color);
+    margin: 0;
+    margin-bottom: 12px;
+}
+
+/* table(.info) -> th -> tr -> td
+   td: .tdh, #infoLow, #infoHigh, #infoHumidity, #infoRain */
+tbody {
+    width: 230px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background-color: #F0F0F0;
+    border-radius: 20px;
+    padding-top: 20px;
+    margin-bottom: 23px;
+}
+
+.info tr {
+    width: 220px;
+    font-size: 18px;
+    color: #4C623B;
+}
+
+.info td {
+    width: 110px;
+}
+
+.tdh {
+    text-align: center;
+    font-weight: 500;
+    font-size: 15px;
+    color: var(--point-color);   
+}
+
+#infoLow, #infoHigh, #infoHumidity, #infoRain {
+    padding-bottom: 20px;
+    padding-top: 5px;
+    text-align: center;
+    font-weight: 600;
+}
+
+/* 주간예보 */
+.futureDays {
+    width: 250px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin: 0;
+    /* border: #4C623B 1px solid; */
+    border-radius: 10px;
+    /* padding: 10px; */
+}
+
+.futureDayInfo {
+    width: 220px;
+    height: 50px;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    padding: 5px;
+    /* border-bottom: 1px solid var(--point-color); */
+    /* border: 1px solid var(--point-color); */
+    background-color: #F0F0F0;
+    margin: 5px;
+    border-radius: 10px;
+
+}
+
+.futureDay {
+    width: 40px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-weight: 600;
+    color: var(--point-color);
+}
+
+.low, .high {
+    width: 30%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.lowTemp, .highTemp {
+    padding-bottom: 5px;
+}
+
+/* Save pop-up */
+.fvSaveWrapper {
+    position: absolute;
+    width: 100%;
+    height: 800px;
+    background-color: transparent;
+    backdrop-filter: blur(3px);
+    z-index: 2;
+    display: none;
+    /* display: flex; */
+    justify-content: center;
+    align-items: center;
+}
+
+.fvSave {
+    width: 400px;
+    height: 550px;
+    background-color: #F0F0F0;
+    border-radius: 20px;
+    padding: 20px;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.saveInfo {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.fwHeader {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    border-radius: 10px;
+    /* border: 1px solid var(--point-color); */
+    margin-top: 20px;
+    padding: 10px 15px;
+    margin-bottom: 20px;
+}
+
+.fwHeader span {
+    padding: 2.5px 10px 2.5px 10px;
+    /* border: #4C623B 1px solid; */
+}
+
+.fwHeader span:nth-child(-n+2) {
+    border-right: 1px solid var(--point-color);
+}
+
+.fwItem {
+    display: flex;
+    width: 100%;
+    flex-direction: column;
+    /* border: 1px solid skyblue; */
+}
+
+.fwDetails {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    justify-content: center;
+    align-items: center;
+    /* border: 1px solid pink; */
+}
+
+/* 기온 정보 */
+.fwTemp, .fwHumid, .fwRain {
+    display: flex;
+    justify-content: space-between;
+    align-items:center;
+    border: 1px solid var(--point-color);
+    width: 250px;
+    height: 50px;
+    padding: 10px 20px 10px 0;
+    border-radius: 5px;
+    margin: 10px;
+}
+
+.saveTempInfo, .saveHumidInfo, .saveRainInfo {
+    /* color: #F3ECAE; */
+    width: 60px;
+    height: 50px;
+    /* border-radius: 10px; */
+    border-right: 1px solid var(--point-color);
+    padding: 10px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.fwDetails select {
+    width: 150px;
+    height: 30px;
+    /* background-color: #F3ECAE; */
+    /* color: #4C623B; */
+    border: 1px solid var(--point-color);
+    border-radius: 30px;
+    padding: 5px;
+    font-weight: 700;
+}
+
+.saveForm {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.saveForm input[type="button"]{
+    width: 100px;
+    height: 40px;
+    background-color: transparent;
+    border: none;
+    border: 1px solid var(--point-color);
+    border-radius: 30px;
+    margin-top: 20px;
+    /* color: #4C623B; */
+    font-weight: 900;
+    cursor: pointer;
+}
+
+.fwDetails span {
+    display: block;
+    text-align: center;
+    padding: 5px;
+}
+
+#close {
+    position: relative;
+    transform: translate(170px,-500px);
+    background-color: transparent;
+    color: var(--point-color);
+    font-size: 2rem;
+    border: none;
+    cursor: pointer;
+}
+
+/* feedback pop-up */
+.feedbackWrapper {
+    position: absolute;
+    width: 100%;
+    height: 800px;
+    background-color: transparent;
+    backdrop-filter: blur(5px);
+    display: none;
+    /* display: flex; */
+    justify-content: center;
+    align-items: center;
+    z-index: 2;
+}
+
+.feedback {
+    width: 400px;
+    height: 200px;
+    background-color: #F0F0F0;
+    border-radius: 20px;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 20px 10px 10px 10px;
+}
+
+#feedbackClose {
+    position: relative;
+    transform: translate(175px, -170px);
+    background-color: transparent;
+    /* color: #F3ECAE; */
+    font-size: 2rem;
+    border: none;
+    cursor: pointer;
+}
+
+.feedbackForm {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.feedbackForm input[type="submit"]{
+    width: 100px;
+    height: 40px;
+    background-color: transparent;
+    border: none;
+    border: 1px solid var(--point-color);
+    border-radius: 30px;
+    margin-top: 20px;
+    font-weight: 900;
+    cursor: pointer;
+}
+
+.feedbackForm input[type="radio"]{
+  display: none;
+}
+
+.feedbackForm label {
+    color: rgb(255, 208, 0);
+}
+
+.feedbackForm label span{
+    font-variation-settings: 'FILL' 0;
+    font-size: 3rem;
+    cursor: pointer;
+}
+
+.afterThree {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+}
+
+/* 반응형 */
+/* @media screen and (max-width:1512px){
+
+} */
